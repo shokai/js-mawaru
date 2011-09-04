@@ -1,0 +1,21 @@
+!!! XHTML
+- @title = 'mawaru'
+%html
+  %head
+    %title= @title
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html', :charset => 'UTF-8'}
+    %script{:type => 'text/javascript', :src => "jquery.js"}
+    %script{:type => 'text/javascript', :src => "main.js"}
+    :css
+      input#dir {
+        width : 300px;
+      }
+  %body
+    %h1= @title
+    %div.control
+      %input{:type => :range, :value => 0, :min => 0, :max => 360, :id => :dir}
+    %div.mawaru
+      - for i in 0..8 do
+        %span.mawaru{:id => i}
+          %img{:src => "img/#{i}.png"}
+    %div#log
