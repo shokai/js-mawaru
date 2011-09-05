@@ -1,5 +1,6 @@
 !!! XHTML
-- @title = 'mawaru'
+- @title = 'iOSでまわる'
+- @url = 'https://github.com/shokai/js-mawaru'
 %html
   %head
     %title= @title
@@ -15,9 +16,12 @@
       }
   %body
     %h1= @title
-    %div.control
-      %input{:type => :range, :value => 0, :min => 0, :max => 360, :id => :dir}
     %div.mawaru
       - for i in 0..8 do
         %span.mawaru{:id => i}
           %img{:src => "img/#{i}.png"}
+    %div.control
+      %input{:type => :range, :value => 0, :min => 0, :max => 360, :id => :dir_slider, :class => :dir}
+      %input{:type => :text, :value => 0, :size => 10, :id => :dir_value, :class => :dir}
+    %hr
+      %a{:href => @url}= @url

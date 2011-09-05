@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <head>
-    <title>mawaru</title>
+    <title>iOSでまわる</title>
     <meta charset='UTF-8' content='text/html' http-equiv='Content-Type' />
     <script src='jquery.js' type='text/javascript'></script>
     <script src='iphone-js-console.js' type='text/javascript'></script>
@@ -20,10 +20,7 @@
     </style>
   </head>
   <body>
-    <h1>mawaru</h1>
-    <div class='control'>
-      <input id='dir' max='360' min='0' type='range' value='0' />
-    </div>
+    <h1>iOSでまわる</h1>
     <div class='mawaru'>
       <span class='mawaru' id='0'>
         <img src='img/0.png' />
@@ -53,5 +50,12 @@
         <img src='img/8.png' />
       </span>
     </div>
+    <div class='control'>
+      <input class='dir' id='dir_slider' max='360' min='0' type='range' value='0' />
+      <input class='dir' id='dir_value' size='10' type='text' value='0' />
+    </div>
+    <hr>
+      <a href='https://github.com/shokai/js-mawaru'>https://github.com/shokai/js-mawaru</a>
+    </hr>
   </body>
 </html>

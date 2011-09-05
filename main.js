@@ -2,10 +2,12 @@ $(function(){
     mawaru.init();
     mawaru.r = 150;
     mawaru.setPos(200, 320);
+    $('div.mawaru').css('height', '450px')
     mawaru.draw(0);
-    $('input#dir').change(function(e){
+    $('input#dir_slider').change(function(e){
         var dir = e.target.value;
         mawaru.draw(dir);
+        $('input#dir_value').val(dir);
     });
     var acc = {};
     window.addEventListener('devicemotion', function(e){
@@ -15,7 +17,8 @@ $(function(){
         console.log(acc);
         $('img').css('width', (acc.z+10)*100+'px')
         var dir = Math.round(Math.atan(acc.x/acc.y)*180);
-        mawaru.draw(dir*-1)
+        mawaru.draw(dir*-1);
+        $('input.dir').val(dir);
     });
 });
 
