@@ -15,7 +15,11 @@ $(function(){
         acc.y = e.accelerationIncludingGravity.y;
         acc.z = e.accelerationIncludingGravity.z;
         console.log(acc);
-        $('img').css('width', (acc.z+10)*100+'px')
+        var use_z = $('input#use_z_check')[0].checked;
+        if(!use_z && Math.abs(acc.z) > 9.1) return;
+        if(use_z){
+            $('img').css('width', (acc.z+10)*100+'px').css('opacity', Math.abs(acc.z));
+        }
         var dir = Math.round(Math.atan(acc.x/acc.y)*180);
         mawaru.draw(dir*-1);
         $('input.dir').val(dir);
