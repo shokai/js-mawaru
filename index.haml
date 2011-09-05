@@ -5,7 +5,10 @@
     %title= @title
     %meta{'http-equiv' => 'Content-Type', :content => 'text/html', :charset => 'UTF-8'}
     %script{:type => 'text/javascript', :src => "jquery.js"}
+    %script{:type => 'text/javascript', :src => "iphone-js-console.js"}
     %script{:type => 'text/javascript', :src => "main.js"}
+    :javascript
+      JsConsole.start('ws://192.168.1.38:8088');
     :css
       input#dir {
         width : 300px;
@@ -18,4 +21,3 @@
       - for i in 0..8 do
         %span.mawaru{:id => i}
           %img{:src => "img/#{i}.png"}
-    %div#log

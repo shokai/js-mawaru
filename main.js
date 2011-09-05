@@ -12,11 +12,11 @@ $(function(){
         acc.x = e.accelerationIncludingGravity.x;
         acc.y = e.accelerationIncludingGravity.y;
         acc.z = e.accelerationIncludingGravity.z;
-    });
-    setInterval(function(){
+        console.log(acc);
+        $('img').css('width', (acc.z+10)*100+'px')
         var dir = Math.round(Math.atan(acc.x/acc.y)*180);
         mawaru.draw(dir*-1)
-    }, 10);
+    });
 });
 
 var mawaru = {
